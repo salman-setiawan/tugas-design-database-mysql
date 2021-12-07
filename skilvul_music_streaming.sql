@@ -32,7 +32,7 @@ create table `user` (
   `singer` varchar(50) not null,
   `album` varchar(50) not null,
   constraint `album` foreign key (`album`) references `music_player`.`album` (`album_id`) on update cascade on delete cascade,
-  constraint `singer` foreign key (`singer`) references `music_player`.`singer` (singer_id`) on update cascade on delete cascade
+  constraint `singer` foreign key (`singer`) references `music_player`.`singer` (`singer_id`) on update cascade on delete cascade
 );
 
 -- Create Table Playlist --
@@ -48,5 +48,5 @@ create table `playlist_track` (
   `playlist_id` int(10) not null auto_increment primary key,
   `track_id` varchar(50) not null default collate 'utf8_general_ci',
   constraint `playlist` foreign key (`playlist_id`) references `music_player` (`playlist_id`) on update cascade on delete cascade,
-  constraint `track` foreign key (`track_id`) references `track` (track_id`) on update cascade on delete cascade
+  constraint `track` foreign key (`track_id`) references `track` (`track_id`) on update cascade on delete cascade
 );
